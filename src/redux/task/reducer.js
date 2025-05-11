@@ -1,14 +1,19 @@
 import { combineReducers } from "redux";
 
 
-export const tasksReducer = (state=[], action) => {
+export const tasksReducer = (state=['Do the dishes', 'Walk the dog'], action) => {
+  if(action.type === 'add') {
+    // state.push(action.payload)
+    return [...state, action.payload]
+  };
+  console.log(state);
 
   return state;
 };
 export const taskReducer = (state="", action) => {
-if(action === "SETTASK"){
+  if(action === "SETTASK"){
     
-}
+  }
   return state;
 };
 

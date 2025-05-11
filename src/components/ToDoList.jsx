@@ -1,20 +1,24 @@
-
+import { useDispatch } from "react-redux";
 const TodoList = ({tasks}) => {
- 
-    console.log(tasks)
-  return (
-    <>
+
+  const delet =(e)=> {
+    
+  }
+
+  return (<>
     <ul>
-       {tasks.map((t, i) => {
-          <li key={i}>
-            <p>{t.name}</p>
-            <input type="checkbox" checked={tasks.isDone} />
-            <button>Delete</button>
-          </li>
-        })}
-      </ul>
-    </>
-  );
+      {tasks.map((t, i) => (
+        <li key={i}>
+          <span>{t}</span>
+          <form onSubmit={delet}>
+            <input name="newtask" type="checkbox" checked={tasks.isDone} />
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      ))}
+    </ul>
+  </>);
+
 };
 
 export default TodoList;
