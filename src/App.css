@@ -1,3 +1,0 @@
-li:has(input:checked) span {
-  text-decoration: line-through 2px;
-}
